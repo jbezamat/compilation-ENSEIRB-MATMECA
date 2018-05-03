@@ -1,0 +1,3 @@
+  %a = alloca i32
+  %b = alloca i32
+  %c = alloca i32

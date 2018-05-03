@@ -1,0 +1,21 @@
+define i32 @main() {
+L0:
+  %a = alloca i32
+  %b = alloca i32
+  %r0 = load i32, i32* %a
+  %r1 = add i32 2, 0
+  %r2 = icmp sgt i32 %r0, %r1
+  br i1 %r2, label %L1, label %L3
+L3:
+  %r3 = load i32, i32* %a
+  %r4 = add i32 4, 0
+  %r5 = icmp slt i32 %r3, %r4
+  br i1 %r2, label %L1, label %L2
+L1:
+  %r6 = add i32 10, 0
+  store i32 %r6, i32* %b
+  br label L2
+L2:
+  %r7 = load i32, i32* %b
+  ret i32 %r7
+}

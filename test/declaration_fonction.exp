@@ -1,0 +1,9 @@
+define i32 @f(i32 %n) {
+L0:
+  %n.addr = alloca i32
+  store i32 %n, i32* %n.addr
+  %r0 = load i32, i32* %n.addr
+  %r1 = add i32 1, 0
+  %r2 = add i32 %r0, %r1
+  ret i32 %r2
+}

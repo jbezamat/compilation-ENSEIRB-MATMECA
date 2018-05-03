@@ -1,0 +1,4 @@
+  %r0 = fadd float 0x3FF23D70A0000000, 0x0000000000000000
+  %r1 = add i32 8, 0
+  %r2 = sitofp i32 %r1 to float
+  %r3 = fadd float %r0, %r2

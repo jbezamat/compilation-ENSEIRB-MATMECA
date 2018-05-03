@@ -1,0 +1,8 @@
+define i32 @main() {
+L0:
+  %ptr = alloca i32*
+  %a = alloca i32
+  store i32* %ptr, i32** %a
+  %r0 = load i32, i32* %a
+  ret i32 %r0
+}

@@ -1,0 +1,7 @@
+  %r0 = fadd float 0x3FF23D70A0000000, 0x0000000000000000
+  %r1 = fadd float 0x40010A3D80000000, 0x0000000000000000
+  %r2 = fadd float 0x40091EB860000000, 0x0000000000000000
+  %r3 = fmul float %r1, %r2
+  %r4 = fadd float 0x40109999A0000000, 0x0000000000000000
+  %r5 = fdiv float %r3, %r4
+  %r6 = fadd float %r0, %r5

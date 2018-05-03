@@ -1,0 +1,31 @@
+define float @f(i32 %a, float %b) {
+L0:
+  %a.addr = alloca i32
+  store i32 %a, i32* %a.addr
+  %b.addr = alloca float
+  store float %b, float* %b.addr
+  %r0 = load i32, i32* %a.addr
+  %r1 = load float, float* %b.addr
+  %r2 = sitofp i32 %r0 to float
+  %r3 = fadd float %r2, %r1
+  ret float %r3
+}
+define i32 @main() {
+L0:
+  %a = alloca float
+  %b = alloca i32
+  %c = alloca i32
+  %r0 = fadd float 0x40091eb860000000, 0x0000000000000000
+  store float %r0, float* %a
+  %r1 = add i32 1, 0
+  store i32 %r1, i32* %b
+  %r2 = load float, float* %a
+  %r3 = load i32, i32* %b
+  %r5 = fptosi float %r2 to i32
+  %r6 = sitofp i32 %r3 to float
+  %r4 = call float @f(i32 %r5, float %r6)
+  %r7 = fptosi float %r4 to i32
+  store i32 %r7, i32* %c
+  %r8 = load i32, i32* %c
+  ret i32 %r8
+}
